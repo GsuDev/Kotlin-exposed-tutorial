@@ -128,36 +128,34 @@ Database.connect("jdbc:mariadb://localhost:3306/test",
 ✚Añadir dependencia:
 
 ```Kotlin
-implementation("mysql:mysql-connector-java:8.0.33")
+implementation 'mysql:mysql-connector-java:8.0.33'
 ```
 
 ⚙️Conexión y configuración:
 
 ```Kotlin
-Database.connect(
-    "jdbc:mysql://localhost:3306/test",
-    driver = "com.mysql.cj.jdbc.Driver",
-    user = "user",
-    password = "password"
+val connection = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/CAMBIAR(NOMBRE DB)",
+    "CAMBIAR(NOMBRE USUARIO)",
+    "CAMBIAR(CONTRASEÑA USUARIO)"
 )
 ```
 
-### Oracle﻿
+### Oracle xe
 
 ✚Añadir dependencia:
 ```Kotlin
-implementation("com.oracle.database.jdbc:ojdbc8:12.2.0.1")
+implementation 'com.oracle.database.jdbc:ojdbc8:12.2.0.1'
 ````
 
-⚙️Conexión y configuración:
+⚙️Conexión y configuración(base de datos por defecto):
 
 ```Kotlin
-Database.connect(
-    "jdbc:oracle:thin:@//localhost:1521/test",
-    driver = "oracle.jdbc.OracleDriver",
-    user = "user",
-    password = "password"
-)
+val connection = DriverManager.getConnection(
+        "jdbc:oracle:thin:@localhost:1521:XE",
+        "CAMBIAR(NOMBRE USUARIO)",
+        "CAMBIAR(CONTRASEÑA USUARIO)"
+    )
 ```
 
 ### PostgreSQL﻿
